@@ -278,10 +278,41 @@
 /*** Team ***/
 .team-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    width: 200px; /* Adjust the width as needed */
+    height:  200px; /* Adjust the height as needed */
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+  
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ensure the text overlay spans the full width of the image */
+     /* Adjust the background color and opacity as needed */
+    color: white; /* Text color */
+}
+
+.team-item .text-overlay h5 {
+    color: white;
+}
+
+
+
+.text-center {
+    padding: 10px; /* Add padding for better readability */
+}
+
+.team-item:hover .text-overlay {
+    opacity: 1; /* Show the text overlay on hover */
 }
 
 .team-item img {
     transition: .5s;
+    width: 100%; /* Make the image width cover the parent container */
+    height: 90%; /* Maintain aspect ratio */
 }
 
 .team-item:hover img {
@@ -441,3 +472,55 @@
     padding-right: 0;
     border-right: none;
 }
+
+.wrapper-explore {
+    background-color: #F7F4ED; /* Change to your desired background color */
+}
+
+
+.package-item {
+    position: relative;
+}
+
+.read-more {
+    position: absolute;
+    top: 260px;
+    left: 80px;
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure the button appears on top of the image */
+}
+
+.custom-icons {
+    position: absolute;
+    top: -45px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+}
+
+.wishlist-icon {
+    position: absolute;
+    top: -45px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+}
+
+.container-xxl {
+    max-width: 1140px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navigation-points .point {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.navigation-points .point.active {
+    background-color: red;
+}
+
+
+
