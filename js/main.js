@@ -132,6 +132,35 @@ $('#loginForm').on('submit', function(event) {
 });
 
 
+new Glide('.glide', {
+    type: 'carousel',
+    perView: 3,
+    focusAt: 'center',
+    breakpoints: {
+      768: {
+        perView: 2
+      },
+      480: {
+        perView: 1
+      }
+    }
+  }).mount();
+
+
+  function shareOnFacebook() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.yourwebsite.com/trip-page', '_blank');
+  }
+  
+  function shareOnTwitter() {
+    window.open('https://twitter.com/intent/tweet?url=https://www.yourwebsite.com/trip-page', '_blank');
+  }
+  
+  function shareOnInstagram() {
+    // Instagram doesn't provide direct sharing via URL, so you may need to use an external service or guide users on how to share.
+    alert('Sharing on Instagram is not supported directly. You can guide users on how to share manually.');
+  }
+  
+
                 
 })(jQuery);
 
