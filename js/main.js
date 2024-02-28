@@ -132,19 +132,7 @@ $('#loginForm').on('submit', function(event) {
 });
 
 
-new Glide('.glide', {
-    type: 'carousel',
-    perView: 3,
-    focusAt: 'center',
-    breakpoints: {
-      768: {
-        perView: 2
-      },
-      480: {
-        perView: 1
-      }
-    }
-  }).mount();
+
 
 
   function shareOnFacebook() {
@@ -159,7 +147,45 @@ new Glide('.glide', {
     // Instagram doesn't provide direct sharing via URL, so you may need to use an external service or guide users on how to share.
     alert('Sharing on Instagram is not supported directly. You can guide users on how to share manually.');
   }
+
+  new Glide('.glide', {
+    type: 'carousel',
+    perView: 3,
+    focusAt: 'center',
+    breakpoints: {
+      768: {
+        perView: 2
+      },
+      480: {
+        perView: 1
+      }
+    }
+  }).mount();
   
+
+  document.addEventListener('DOMContentLoaded', function() {
+    let slides = document.querySelector('.slides');
+    let slideWidth = document.querySelector('.slider-container').offsetWidth;
+    let slideIndex = 0;
+
+    function nextSlide() {
+        console.log('next slide called')
+        slideIndex++;
+        if (slideIndex >= slides.children.length) {
+            slideIndex = 0;
+        }
+        updateSlide();
+    }
+
+    function updateSlide() {
+        console.log('next slide called')
+        slides.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+    }
+
+    setInterval(nextSlide, 2000); // Change slide every 2 seconds
+});
+
+
 
                 
 })(jQuery);
